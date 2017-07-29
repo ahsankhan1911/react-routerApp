@@ -1,13 +1,19 @@
-  a.active {
-    color: red;
-  }
+body {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+}
 
-  .header {
-    border: 1px solid blue; 
-  }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
 
-  .content {
-    border: 1px solid red;
-  }
-
-  
+a.active {
+  color: #18BC9C;
+}
