@@ -1,87 +1,72 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Link, NavLink} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
 import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 import './App.css'
 
 
+
 const NavRoutes =() => (
-     <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
-  
-
-        <div className="container">
-                <ul className="nav navbar-nav navbar-right">
-                  
-                       <Link activeClassName="active" to="/">Home</Link>
-                    
-                 
-                       <Link to="/portfolio">Portfolio</Link>
-                 
-              
-                        <Link to="/about">About</Link>
-            
-                  
-                       <Link to="/contact">Contact</Link>
-                   
-                </ul>
-        </div>
-
-    </nav>
-
+   <nav className=" NavBar navbar navbar-inverse" >
+  <div className="container-fluid">
+    <div className="navbar-header">
+      <a className="navbar-brand" >My Portfolio</a>
+    </div>
+    <ul className="nav navbar-nav navbar-center">
+      <li ><Link to="/">Home</Link></li>
+      <li><Link to="/portfolio">Portfolio</Link> </li>
+      <li><Link to="/contact">Contact</Link> </li>
+    </ul>
+  </div>
+</nav>
 )
  
-const Home = () => (
-
-<div>
-    <NavRoutes /> 
-        <div class="container" >
-            <div class="row">
-                <div class="col-lg-12">
-                    <img class="img-responsive" src="img/profile.png" alt=""/>
-                    <div class="intro-text">
-                        <h6 class="name">Saad Khan</h6>
-                      
-                        <span class="skills">Web Developer - Graphic Designer</span>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-)
-
-const About = () => (
-    <div>
-  <NavRoutes /> 
-<h1>this is the About page</h1>
-</div>
-)
+class Home extends React.Component {
+     render(){
+    return(
      
-const Contact = () => (
+        <div className="container container-table">
+        <div className="row vertical-center-row">
+           <div className="text-center col-md-4 col-md-offset-4">
+                    <img src={'profile.png'} alt={" "}/>
+                    <h1 className="name">Saad Khan</h1>
+                    <span className="skills">Web Developer - Graphic Designer</span>
+                     
+                    </div> 
+            </div> 
+  
+    </div>) }
+}
+     
+class Contact extends React.Component {
+render(){
+    return(
     <div>
   <NavRoutes /> 
 <h1>this is the Contact page</h1>
-</div>
-)
+    </div> ) }
+}
 
-const Portfolio = () => (
+class Portfolio extends React.Component {
+
+render(){
+    return(
     <div>
   <NavRoutes /> 
-<h1>this is the Portfolio page</h1>
-</div>
-)
+<button> </button>
+    </div> ) }
+}
 
 
 const App = () => (
+   
  <Router>
-
-   <div>
+     
+   <div> 
       {/* <Links/>  */}
      <Route exact path="/" component={Home}/>
-      <Route  path="/about" component={About}/>
-     <Route  path="/contact" component={Contact}/> .
-      <Route  path="/portfolio" component={Portfolio}/> 
+     <Route  path="/contact" component={Contact}/>
+      <Route  path="/portfolio" component={Portfolio}/>
     
    </div>
  </Router>

@@ -1,6 +1,8 @@
-body {
+body  {
   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   overflow-x: hidden;
+  background-color: #ECF0F1
+  
 }
 
 h1,
@@ -9,11 +11,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
 }
 
-a.active {
-  color: #18BC9C;
+div .NavBar {
+  border-radius: 0% ;
 }
