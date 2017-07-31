@@ -4,8 +4,6 @@ import '../node_modules/bootstrap/dist/css/bootstrap.css'
 
 import './App.css'
 
-
-
 const NavRoutes =() => (
    <nav className=" NavBar navbar navbar-inverse" >
   <div className="container-fluid">
@@ -24,17 +22,21 @@ const NavRoutes =() => (
 class Home extends React.Component {
      render(){
     return(
-     
-        <div className="container container-table">
-        <div className="row vertical-center-row">
+      <div> 
+      <nav className=" NavBar navbar navbar-inverse" > </nav>
+        <div className="container">
+        <div className="row ">
            <div className="text-center col-md-4 col-md-offset-4">
                     <img src={'profile.png'} alt={" "}/>
-                    <h1 className="name">Saad Khan</h1>
-                    <span className="skills">Web Developer - Graphic Designer</span>
+                    <h1 style={{"font-size": "4em"}}>Saad Khan</h1>
+                    <div style={{"font-size": "1.5em"}}>Web Developer - Graphic Designer</div>
+                    <Link className=" margin btn btn-warning btn-lg" to="/portfolio">Portfolio</Link>
+                    <Link  className="margin btn btn-primary btn-lg" to="/contact">Contact</Link>
                      
                     </div> 
             </div> 
   
+    </div>
     </div>) }
 }
      
@@ -43,7 +45,7 @@ render(){
     return(
     <div>
   <NavRoutes /> 
-<h1>this is the Contact page</h1>
+
     </div> ) }
 }
 
@@ -53,8 +55,40 @@ render(){
     return(
     <div>
   <NavRoutes /> 
-<button> </button>
-    </div> ) }
+  <div className="text-center">
+    <h1 style={{"font-size": "4em", "marginTop": "50px"}}>Porfolio</h1> <hr/>
+    <span style={{"font-size": "2em"}} className="caption">Programming Background</span>
+
+    <div className="item">
+    <img className="thumbnail margin " src={'js.png'} alt={" "}/>
+    <span style={{"font-size": "1.4em"}} className="caption">Javascript</span>
+</div>
+
+<div className="item">
+    <img className="thumbnail margin " src={'node.png'} alt={" "}/>
+    <span style={{"font-size": "1.4em"}} className="caption">Node Js</span>
+</div>
+
+<div className="item">
+   <img className="thumbnail margin " src={'express.jpg'} alt={" "}/>
+    <span style={{"font-size": "1.4em"}} className="caption">Express Js</span>
+</div> <hr/>
+
+ <span style={{"font-size": "2em"}} className="caption">Designing Background</span>
+
+<div className="item">
+   <img className="thumbnail margin " src={'psd.png'} alt={" "}/>
+    <span style={{"font-size": "1.4em"}} className="caption">Adobe Photoshop</span>
+</div>
+
+<div className="item">
+   <img className="thumbnail margin " src={'ai.png'} alt={" "}/>
+    <span style={{"font-size": "1.4em"}} className="caption">Adobe Illustrator</span>
+</div>
+
+</div>
+ </div> ) 
+}
 }
 
 
