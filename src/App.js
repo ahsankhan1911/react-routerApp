@@ -18,10 +18,12 @@ const NavRoutes =() => (
       <a className="navbar-brand" >React Router App</a>
     </div>
     <ul className="nav navbar-nav">
-      <li className="active"><Link to="/">Home</Link></li>
+      <li><Link to="/">Home</Link></li>
        
       <li><Link to="/about">About</Link> </li>
       <li><Link to="/contact">Contact</Link> </li>
+      <li><Link to="/login">Log In</Link> </li>
+      <li><Link to="/signup">Sign up</Link> </li>
     </ul>
   </div>
 </nav>
@@ -74,6 +76,50 @@ const Contact = () => (
 )
 
 
+
+
+
+class SignUp extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      value: '',
+      value2: ''};
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+    handleChange(event) {
+    this.setState({value: event.target.value});
+  } 
+
+    handleSubmit(event) {
+
+  <h1>Hellooooooo</h1>
+  
+    event.preventDefault();
+  }
+
+   render() {
+   return (
+     <div>
+              <form onSubmit={this.handleSubmit}>
+      
+       <div className="form-group">
+          <input type="text" value={this.state.value} className="form-control" onChange={this.handleChange} />
+    </div>
+    {/* <div className="form-group">
+          <input type="text" value={this.state.value} className="form-control" onChange={this.handleChange} />
+    </div> */}
+        <input type="submit" value="Submit" />
+        
+      </form>
+   {console.log(this.props.children)}
+    </div>
+   );
+}
+}
 const App = () => (
  <Router>
 
@@ -82,6 +128,8 @@ const App = () => (
      <Route exact path="/" component={Home}/>
      <Route exact path="/about" component={About}/>
      <Route exact path="/contact" component={Contact}/>
+     {/* <Route exact path="/login" component={LogIn}/> */}
+      <Route exact path="/signup" component={SignUp}/> 
     
    </div>
  </Router>
